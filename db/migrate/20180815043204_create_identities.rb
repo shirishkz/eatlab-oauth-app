@@ -9,8 +9,11 @@ class CreateIdentities < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :email
       t.string :nickname
+      t.integer :age
+      t.string :gender
+      t.string :location
+      t.string :hometown
       t.string :image
-      t.string :phone
       t.string :urls
 
       t.timestamps

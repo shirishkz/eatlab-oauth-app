@@ -1,4 +1,4 @@
-class Identity < ApplicationRecord
+class Identity < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :uid, :provider
   validates_uniqueness_of :uid, :scope => :provider
@@ -11,8 +11,11 @@ class Identity < ApplicationRecord
     identity.name = auth.info.name
     identity.email = auth.info.email
     identity.nickname = auth.info.nickname
+    identity.age = auth.info.user_birthday
+    identity.gender = auth.info.user_gender
+    identity.location = auth.info.user_location
+    identity.hometown = auth.info.user_hometown
     identity.image = auth.info.image
-    identity.phone = auth.info.phone
     identity.urls = (auth.info.urls || "").to_json
     identity.save
     identity

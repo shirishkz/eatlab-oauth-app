@@ -9,8 +9,11 @@ one:
   name: MyString
   email: MyString
   nickname: MyString
+  age: 1
+  gender: MyString
+  location: MyString
+  hometown: MyString
   image: MyString
-  phone: MyString
   urls: MyString
 
 two:
@@ -22,6 +25,9 @@ two:
   name: MyString
   email: MyString
   nickname: MyString
+  age: 1
+  gender: MyString
+  location: MyString
+  hometown: MyString
   image: MyString
-  phone: MyString
   urls: MyString

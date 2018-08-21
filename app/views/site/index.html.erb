@@ -1,11 +1,66 @@
 <h2 align="center">Welcome to the Demo</h2>
 <br>
 <% if current_user %>
-  <div class="container" align="center">
-    Hello World!!!
-  </div>
+  <% if current_user.admin? == false %>
+<div class="panel panel-default">
+<div class="panel-body">
+<h1 class="page-header">Here is some info about you...</h1>
+<ul>
+<li><strong>Name:</strong> <%= Identity.find_by_email(current_user.email).name %></li>
+<li><strong>Email:</strong> <%= current_user.email %></li>
+<li><strong>Provider:</strong> <%= Identity.find_by_email(current_user.email).provider %></li>
+<li><strong>UID:</strong> <%= Identity.find_by_email(current_user.email).uid %></li>
+<li><strong>Nickname:</strong> <%= Identity.find_by_email(current_user.email).nickname %></li>
+<li><strong>Age:</strong> <%= Identity.find_by_email(current_user.email).age %></li>
+<li><strong>Gender:</strong> <%= Identity.find_by_email(current_user.email).gender %></li>
+<li><strong>Location:</strong> <%= Identity.find_by_email(current_user.email).location %></li>
+<li><strong>Hometown:</strong> <%= Identity.find_by_email(current_user.email).hometown %></li>
+<li><strong>Avatar URL:</strong> <%= Identity.find_by_email(current_user.email).image %></li>
+<li><strong>URL:</strong> <%#= Identity.find_by_email(current_user.email).url %></li>
+<li><strong>Last Log In:</strong> <%= current_user.last_sign_in_at %></li>
+<li><strong>IP Address:</strong> <%= current_user.current_sign_in_ip %></li>
+<li><strong>Role ID:</strong> <%#= Role.find_by_email(current_user.email).url %></li>
+</ul>
+</div>
+</div>
+<% elsif current_user.admin? == true %>
+<div class="panel panel-default">
+<div class="panel-body">
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Email</th>
+<th>Sign In Count</th>
+<th>Current Sign In</th>
+<th>Last Sign In</th>
+<th>Current IP</th>git 
+<th>Last IP</th>
+<th>Created At</th>
+<th>Updated At</th>
+</tr>
+</thead>
+<tbody>
+<% @users.each do |user| %>
+<tr>
+<td><%= user.role_id %></td>
+<td><%= user.email %></td>
+<td><%= user.sign_in_count %></td>
+<td><%= user.current_sign_in_at %></td>
+<td><%= user.last_sign_in_at %></td>
+<td><%= user.current_sign_in_ip %></td>
+<td><%= user.last_sign_in_ip %></td>
+<td><%= user.created_at %></td>
+<td><%= user.updated_at %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+</div>
 <% else %>
-  <div class="container" align="center">
-    Empty!!
-  </div>
+<div class="container" align="center">
+Hello World!!!
+</div>
+<% end %>
 <% end %>

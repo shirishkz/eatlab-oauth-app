@@ -32,7 +32,7 @@ class OmniauthCallbacksController < ApplicationController
     else
       session["devise.#{provider}_data"] = env["omniauth.auth"]
       redirect_to new_user_registration_url
-      flash[:warning] = "There was an error while trying to authenticate you..."
+      flash[:warning] = 'There was an error while trying to authenticate you...'
     end
   end
 end

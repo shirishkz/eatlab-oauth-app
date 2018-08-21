@@ -21,14 +21,14 @@
       <ul class="navbar-nav mr-auto"></ul>
       <span class="navbar-text">
         <% if current_user %>
-          <%= current_user.email %> via <%#= Identity.find_by_email(current_user.email).provider %>
+          <%= current_user.email %>
           &nbsp
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
         <% else %>
           <ul class="nav navbar-nav">
             <li><%= link_to 'Log In', user_session_path, class: "btn btn-github" %></li>
             <li><%= link_to 'Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-facebook" %></li>
-            <l1><%= link_to 'Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-google" %></l1>
+            <li><%= link_to 'Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-google" %></li>
             <li><%= link_to 'Twitter', user_twitter_omniauth_authorize_path, class: "btn btn-twitter"%></li>
           </ul>
         <% end %>

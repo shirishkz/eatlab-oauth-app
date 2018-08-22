@@ -21,7 +21,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 # Use Social buttons for Bootstrap
 gem 'bootstrap-social-rails'
-
+gem 'devise-bootstrap-views'
 # Use Devise for authentication
 gem 'devise'
 # Use Omniauth Facebook plugin

@@ -10,13 +10,13 @@ An user access hub using OmniAuth logins to view their own public details.
 
 - Database: PostgresSQL 11.4
 
-- Frontend UI: Bootstrap 3 w/ Sass
+- Frontend UI: Bootstrap 4
 
 - Linter: RuboCop
 
 - Test Framework: RSpec w/ SimpleCov
 
-- App URL:
+- App URL: https://eatlab-oauth-app.herokuapp.com/
 
 ## Setup
 
@@ -77,7 +77,7 @@ This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 ## Acknowledgments
 
 * [Nokogiri](http://www.nokogiri.org/)
-* [Omniauth](https://github.com/omniauth/omniauth)
+* [OmniAuth](https://github.com/omniauth/omniauth)
 * [Railscasts](http://railscasts.com/)
 * [GoRails](https://gorails.com/)
 
